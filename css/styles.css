@@ -803,10 +803,12 @@ img {
 }
 
 .modal-label {
+  display: block;
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
   color: var(--secondary-text-color);
+  margin-bottom: 4px;
 }
 
 .modal-title {
@@ -827,11 +829,28 @@ img {
   border-radius: 4px;
   padding-left: 15px;
   outline: none;
-  margin-top: 4px;
+  padding-left: 42px;
+  transition: border-color var(--animation);
 }
 
-.modal-icon {
-  /* position: absolute; */
+.modal-input:focus + .input-icon {
+  fill: var(--accent-color);
+}
+
+.modal-input:focus {
+  border-color: var(--accent-color);
+}
+
+.modal-input-wrap {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill var(--animation);
 }
 
 .modal-form-field {
@@ -847,7 +866,6 @@ img {
   resize: none;
   padding: 12px 16px;
   outline: none;
-  margin-top: 4px;
   margin-bottom: 20px;
 }
 
@@ -858,7 +876,7 @@ img {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.modal-police {
+.modal-policy {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
@@ -867,13 +885,13 @@ img {
 }
 
 .modal-checkbox {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   margin-bottom: 30px;
 }
 
-.police-link {
+.policy-link {
   color: var(--accent-color);
 }
 
@@ -894,4 +912,44 @@ img {
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+}
+
+.check-text {
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--secondary-text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-icon {
+  display: flex;
+  align-items: center;
+}
+
+.check-icon-on {
+  display: none;
+  margin-right: 7px;
+}
+
+.check-icon-off {
+  margin-right: 7px;
+}
+
+.input-check:focus + .check-text span {
+  fill: var(--accent-color);
+}
+
+.input-check:checked + .check-text .check-icon-on {
+  display: block;
+}
+
+.input-check:checked + .check-text .check-icon-off {
+  display: none;
+}
+
+.policy-link {
+  margin-left: 4px;
 }
